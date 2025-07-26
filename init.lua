@@ -731,7 +731,12 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'delve', 'gopls', 'gotests', 'impl', 'gopls', 'staticcheck', -- go
+        'delve',
+        'gopls',
+        'gotests',
+        'impl',
+        'gopls',
+        'staticcheck', -- go
         'ols', -- odin
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -853,6 +858,12 @@ require('lazy').setup({
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'default',
+
+        ['Up'] = { 'select_prev', 'fallback' },
+        ['Down'] = { 'select_next', 'fallback' },
+        ['<Tab>'] = { 'select_next', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'fallback' },
+        ['<CR>'] = { 'accept', 'fallback' },
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
